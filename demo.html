@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #22A49C;
+        }
+        .nav {
+            width: 80%;
+            height: 77px;
+            position: relative;
+            border-radius: 600px;
+            border: 1px solid #4A6866;
+            backdrop-filter: blur(384.30px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px;
+            margin: 60px auto 0 auto;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1;
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-title {
+            display: flex;
+            align-items: center;
+            height: 60px;
+        }
+
+        .nav-list {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        .nav-list > li {
+            list-style-type: none;
+        }
+
+        .nav-list > li a {
+            text-align: center;
+            color: #B7DDDA;
+            font-size: 16px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.32px;
+            text-decoration: none;
+            word-wrap: break-word;
+            cursor: pointer;
+        }
+
+        #nav-check {
+            display: none;
+        }
+
+        .nav-btn {
+            display: none;
+        }
+
+        .logo-name {
+            transform: scale(1);
+            transition: all 0.3s ease-in;
+        }
+
+        .front-logo {
+            transform: scale(1);
+            transition: width 2s, height 2s, transform 2s;
+        }
+
+        .navbar-button {
+            width: 216px;
+            height: 60px;
+            text-decoration: none;
+            background-color: white;
+            border-radius: 60px;
+            color: #22A49C;
+            font-size: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            word-wrap: break-word;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .nav {
+                height: 60px;
+            }
+            .nav > .nav-btn {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding-top: 0.2rem;
+            }
+
+            .nav > .nav-btn > label {
+                display: inline-block;
+                width: 50px;
+                height: 20px;
+                padding: 13px;
+            }
+
+            .nav > .nav-btn > label > span {
+                display: block;
+                width: 25px;
+                height: 2px;
+                background-color: #eee;
+                margin: 5px 0;
+            }
+
+            .nav-list {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                width: 80%;
+                height: 0;
+                transition: all 0.3s ease-in;
+                background-color:#004d40;
+                top:60px;
+                left: 28px;
+                overflow: hidden;
+                color: black;
+                padding-left:20px;
+            }
+
+            .nav-list > li {
+                width: 100%;
+                margin-top: 1.5rem;
+            }
+
+            #nav-check:checked ~ .nav-list {
+                /* height: calc(100vh - 50px); */
+
+                height: calc(55vh - 95px);
+            }
+
+            .logo-name {
+                transform: scale(0);
+                transition: all 0.2s ease-in;
+            }
+
+            .front-logo {
+                transform: scale(1.32);
+                transition: width 2s, height 2s, transform 2s;
+            }
+
+            .navbar-button {
+                margin-right: 60px;
+                height: 46px;
+                width: 180px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .nav > .nav-btn {
+                display: none;
+            }
+
+            .nav-list {
+                position: static;
+                display: flex;
+                flex-direction: row;
+                height: auto;
+                background-color: transparent;
+            }
+        }
+
+        @media (max-width: 428px) {
+            .navbar-button {
+                display: none;
+            }
+        }
+
+        /* Hero section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background-color: #f5f5f5;
+            background-image: url('assets/hero-section.svg');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+
+        .hero-content {
+            max-width: 50%;
+            justify-content: center;
+            text-align: center;
+            margin: 0 auto;
+            
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            color: white;
+            font-size: 72px;
+            font-family: poppins, sans-serif;
+            font-weight: 100;
+            letter-spacing: 1.44px;
+            word-wrap: break-word;
+            text-transform: uppercase;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 30px;
+            width: 751px;
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            font-family: Segoe UI;
+            font-weight: 350;
+            letter-spacing: 0.40px;
+            word-wrap: break-word;
+        }
+
+        .hero-button {
+            display: inline-block;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            width: 216px;
+            height: 60px;
+            text-decoration: none;
+            background-color: white;
+            border-radius: 60px;
+            color: #22A49C;
+            font-size: 20px;
+            font-family: 'Segoe UI', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+        }
+
+        .hero-button:hover {
+            background-color: #004d40;
+        }
+
+        .hero-image {
+            max-width: 45%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Responsive Hero Section */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-content, .hero-image {
+                max-width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                margin-top:140px;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="nav">
+            <div class="nav-header">
+                <div class="nav-title">
+                    <img src="assets/blockcore.svg" alt="blockcore" class="front-logo" height="30px">&nbsp;&nbsp;
+                    <img src="assets/blockcore-logo.svg" alt="blockcore-logo" class="logo-name" height="25px">
+                </div>
+            </div>
+            <input type="checkbox" id="nav-check">
+            <div class="nav-btn">
+                <label for="nav-check">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+            <ul class="nav-list">
+                <li><a href="#">Apps</a></li>
+                <li><a href="#">Platform</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <a href="#" class="navbar-button">Documentation</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Decentralize <br> Everything</h1>
+            <p>Our vision is to decentralize everything. We offer free, open-source software to build modern decentralized societies. Whether you're creating a free city, intentional community, or modernizing society, we support you.</p>
+            <a href="#" class="hero-button">Learn More</a>
+        </div>
+    </section>
+
+    <script src="main.js"></script>
+</body>
+</html>
