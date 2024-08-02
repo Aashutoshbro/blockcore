@@ -184,7 +184,28 @@
         flex-direction: row;
         height: auto;
         background-color: transparent;
+        width: 80%;
     }
+}
+
+@media (min-width: 769px) {
+  .nav > .nav-btn {
+      display: none;
+  }
+
+  .nav-list {
+      position: static;
+      display: flex;
+      flex-direction: row;
+      height: auto;
+      background-color: transparent;
+      width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .nav-list{
+    width: 84%;
+  }
 }
 
 
