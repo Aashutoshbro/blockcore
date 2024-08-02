@@ -39,7 +39,6 @@
     display: flex;
     align-items: center;
     height: 60px;
-    gap: 20px;
 }
 .nav-title a{
   text-decoration: none;
@@ -52,7 +51,7 @@
     padding: 0;
     list-style: none;
     flex-grow: 1;
-    justify-content: center;
+    justify-content: center;;
 }
 
 .nav-list > li {
@@ -69,8 +68,11 @@
     text-decoration: none;
     word-wrap: break-word;
     cursor: pointer;
+    transition: all 0.2s linear;
 }
-
+.nav-list > li a:hover {
+    color: white;
+}
 #nav-check {
     display: none;
 }
@@ -82,6 +84,7 @@
 .logo-name {
     transform: scale(1);
     transition: all 0.3s ease-in;
+    margin-left:20px;
 }
 
 .front-logo {
@@ -562,9 +565,7 @@ h1 span {
   background-position: center;
   
 }
-.main-project-layer{
-  
-}
+
 .text-content {
   flex: 1;
   padding: 20px;
@@ -647,6 +648,13 @@ h1 span {
 }
 .logo-container img{
   width: 31px;
+}
+.learn-more{
+  transition: all 0.2s ease-in;
+}
+.learn-more:hover {
+  color: #004d40;
+  transform: scale(1.02);
 }
 
 
@@ -785,12 +793,6 @@ h1 span {
 .logo-image img:hover{
   transform: scale(1.05);
 } 
-
-.img-drop{
-  position: relative;
-  top:-160px;
-}
-
 .text-content-get-involve button {
   width: 343px;
   height: 60px;
