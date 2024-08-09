@@ -1173,14 +1173,6 @@ h1 span {
   }
 }
 
-@media screen and (max-width: 396px) {
-    .footer .column {
-      margin: 0px 0px -20px -60px;
-      min-width: 190%;
-    }
-}
-
-
 
 /* --------------------social starts------------------- */
 .footer-bottom {
