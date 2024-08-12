@@ -118,8 +118,9 @@
     color: white;
 }
 
-.logo-shift{
+.navbar-button .logo-shift{
   margin-left:16px;
+  font-family: poppins, sans-serif;
 }
 
 /* Responsive styling */
