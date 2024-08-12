@@ -951,7 +951,52 @@ h1 span {
 }
 
 
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5vw;
+  
 
+}
+.button-container button{
+  transition: all 0.2s ease-in;
+}
+.button-container button:hover{
+  transform: scale(1.04);
+}
+
+.see-more-btn {
+  background-color: #34a798;
+  color: white;
+  border: none;
+  padding: 1vw 3vw;
+  border-radius: 0.5vw;
+  font-size: 1.5vw;
+  cursor: pointer;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+}
+
+.see-more-btn:hover {
+  background-color: #2b8d80;
+}
+
+
+@media (max-width: 768px) {
+  .see-more-btn {
+    padding:2vw 4vw;
+    font-size: 2vw;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .see-more-btn {
+    padding:2vw 8vw;
+    font-size: 3vw;
+  }
+
+}
 
 /*----------------project cards ends------------------- */
 
