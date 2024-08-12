@@ -101,7 +101,7 @@
     background-color: white;
     border-radius: 60px;
     color: #22A49C;
-    font-size: 1.2vw;
+    font-size: 1.32vw;
     font-weight: 600;
     letter-spacing: 0.40px;
     display: flex;
@@ -109,7 +109,7 @@
     align-items: center;
     word-wrap: break-word;
     transition: all 0.3s ease-in;
-    gap:20px;
+   ;
 }
 
 .navbar-button:hover {
@@ -119,8 +119,9 @@
 }
 
 .logo-shift{
-  margin-left:20px;
+  margin-left:16px;
 }
+
 /* Responsive styling */
 @media (max-width: 1200px) {
     .nav {
