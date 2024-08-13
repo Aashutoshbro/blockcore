@@ -116,6 +116,10 @@
 
 .nav .navbar-button .logo-shift{
   margin-left:16px;
+  color:#000;
+}
+.nav .navbar-button i {
+    color: #000;
 }
 
 /* Responsive styling */
@@ -1406,6 +1410,7 @@ h1 span {
   border-radius: 50%;
   border-bottom:none;
   border-right:none;
+  color:black;
 }
 
 .footer-bottom .left .base-footer-img-logo {
